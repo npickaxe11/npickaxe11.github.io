@@ -191,7 +191,24 @@
         <div style="font-size: 16px;">正在突破防火墙...</div>
     </div>
 
-    <script>
+     <script>
+    // 新增防御代码（放在最前面）
+    if(window.performance && performance.navigation.type === 0) {
+        sessionStorage.setItem('safeLoad', 'true');
+    }
+    if(!sessionStorage.getItem('safeLoad')) {
+        document.write('<h1 style="color:#ff6b6b;text-align:center;">请从正确入口访问！</h1>');
+        window.stop();
+    }
+
+    // 修改后的提交函数
+    function handleSubmit(e) {
+        e.preventDefault();
+        if(!e.isTrusted) return false; // 关键防御
+        
+        // 原有跳转逻辑...
+    }
+         
     // 量子防御系统
     let isDirty = false;
     let escapeAttempts = 0;
