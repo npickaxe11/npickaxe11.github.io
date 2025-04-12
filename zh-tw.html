@@ -6,6 +6,60 @@
     <title>NPickaxe11奇奇怪怪的引導頁</title>
     <!-- 註釋？寫你木琴的註釋 -->
     <style>
+        .construction-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffd700,
+        #ffd700 20px,
+        #000 20px,
+        #000 40px
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: shine 2s linear infinite;
+}
+
+.construction-text {
+    background: rgba(0,0,0,0.7);
+    padding: 5px 20px;
+    border-radius: 3px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+}
+
+.warning-icon {
+    margin-right: 10px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes shine {
+    0% { background-position: 0 0; }
+    100% { background-position: 80px 0; }
+}
+
+body {
+    margin-top: 40px; /* 防止内容被顶部条幅遮挡 */
+}
         body {
             font-family: 'Microsoft YaHei', Arial, sans-serif;
             margin: 0;
@@ -161,6 +215,12 @@
     </style>
 </head>
 <body>
+    <div class="construction-banner">
+       <div class="construction-text">
+           <span class="warning-icon">🚧</span>
+        網站完善中
+       </div>
+    </div>
     <div class="left">
         <img src="https://i.postimg.cc/6q8T1zhb/QQ20250412-113430.png" alt="抽象背景圖">
         <h2>NPickaxe11的奇妙引導頁</h2>
@@ -208,6 +268,10 @@
             <a href="friends.html" class="button">
                 <p>病友連結</p>
                 <small>其他同樣不太正常的朋友們</small>
+            </a>
+            <a href="https://www.bilibili.com/video/BV1uT4y1P7CX" class="button">
+                <p>送Minecraft正版账号</p>
+                <small>免费的MC账号，无需抽奖</small>
             </a>
         </div>
         
