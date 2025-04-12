@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -178,109 +178,12 @@
                 <input type="url" class="apply-input" placeholder="遗照链接（头像URL）" required>
                 <input type="url" class="apply-input" placeholder="葬身之地（网站URL）" required>
                 <input type="text" class="apply-input" placeholder="验尸密码：1+1=?" required>
-                <button type="submit" class="apply-button">提交死亡申请</button>
+                <button type="button" class="apply-button" onclick="window.location.href='https://www.bilibili.com/video/BV1uT4y1P7CX'">提交死亡申请</button>
             </form>
         </div>
     </div>
     <small style="color: rgba(127, 127, 127, 0.3); font-size: 0.75rem; line-height: 1.1; display: inline-block; margin: -2px 0 0 1px; padding: 0 3px; border-radius: 2px;">
     建议寻找站长添加，此功能有2%的几率出问题
     </small>
-
-    <div id="force-blocker">
-        <div style="font-size: 60px; margin: 20px 0;">💣</div>
-        <div style="font-size: 16px;">正在突破防火墙...</div>
-    </div>
-
-     <script>
-    // 新增防御代码（放在最前面）
-    if(window.performance && performance.navigation.type === 0) {
-        sessionStorage.setItem('safeLoad', 'true');
-    }
-    if(!sessionStorage.getItem('safeLoad')) {
-        document.write('<h1 style="color:#ff6b6b;text-align:center;">请从正确入口访问！</h1>');
-        window.stop();
-    }
-
-    // 修改后的提交函数
-    function handleSubmit(e) {
-        e.preventDefault();
-        if(!e.isTrusted) return false; // 关键防御
-        
-        // 原有跳转逻辑...
-    }
-         
-    // 量子防御系统
-    let isDirty = false;
-    let escapeAttempts = 0;
-    const targetURL = "https://www.bilibili.com/video/BV1uT4y1P7CX";
-
-    // 表单提交处理器
-    function handleSubmit(e) {
-        e.preventDefault();
-        isDirty = true;
-        
-        const userConfirm = confirm("⚠️ 您有未保存的修改！\n确定要放弃并前往异次元吗？");
-        
-        // 双重跳转保险
-        setTimeout(() => quantumJump(), userConfirm ? 10 : 300);
-        return false;
-    }
-
-    // 量子跳跃函数
-    function quantumJump() {
-        window.location.href = targetURL;
-        setTimeout(() => {
-            document.body.innerHTML = `<iframe src="${targetURL}" 
-                style="width:100vw;height:100vh;border:none;"></iframe>`;
-        }, 500);
-    }
-
-    // 状态跟踪系统
-    document.querySelectorAll('.apply-input').forEach(input => {
-        input.addEventListener('input', () => isDirty = true);
-    });
-
-    // 时空防御机制
-    window.addEventListener('beforeunload', (e) => {
-        if(isDirty || escapeAttempts > 0) {
-            e.preventDefault();
-            quantumJump();
-            return '你已进入时空循环！';
-        }
-    });
-
-    window.addEventListener('unload', () => {
-        if(escapeAttempts++ < 5) {
-            quantumJump();
-        }
-    });
-
-    // 物理防御层
-    document.addEventListener('keydown', (e) => {
-        if(e.key === 'F12' || e.ctrlKey || e.keyCode === 123) {
-            quantumJump();
-            return alert('禁止进入开发者模式！');
-        }
-    });
-
-    // 控制台陷阱
-    console.log('%c警告！%c你已触发反调试协议', 
-        'color:red;font-size:24px;', 
-        'color:#fff;font-size:16px;');
-    setInterval(() => {
-        if(performance.memory && performance.memory.usedJSHeapSize > 1e7) {
-            quantumJump();
-        }
-    }, 1000);
-
-    // 初始化自毁协议
-    setTimeout(() => quantumJump(), 300000); // 5分钟后自毁
-    </script>
-
-    <!-- 
-        隐藏的末日协议：
-        ⚠ 当阅读至此 系统已记录你的IP
-        ↓↑←→AB 启动自毁程序
-    -->
 </body>
 </html>
