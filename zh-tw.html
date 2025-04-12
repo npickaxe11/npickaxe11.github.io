@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPickaxe11奇奇怪怪的引導頁</title>
+    <!-- 註釋？寫你木琴的註釋 -->
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #2e2e2e;
+            color: white;
+        }
+
+        .left {
+            width: 30%;
+            position: relative;
+            background-color: #333;
+            overflow: hidden;
+            animation: slide-in 1.5s ease-out;
+        }
+
+        .left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: -100%;
+            animation: img-slide 3s forwards;
+            filter: brightness(0.7);
+        }
+
+        .left h2 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 22px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-shadow: 2px 2px 4px #000;
+            z-index: 2;
+        }
+
+        @keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes img-slide {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 0;
+            }
+        }
+
+        .right {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 30px;
+            background-color: #252525;
+            overflow-y: auto;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
+        .header p {
+            font-size: 16px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: calc(50% - 20px);
+            min-width: 250px;
+            background-color: #444;
+            color: #fff;
+            padding: 18px;
+            text-align: left;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .button:hover {
+            background-color: #555;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .button p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button small {
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+            .left, .right {
+                width: 100%;
+            }
+            .left {
+                height: 300px;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="https://i.postimg.cc/6q8T1zhb/QQ20250412-113430.png" alt="抽象背景圖">
+        <h2>NPickaxe11的奇妙引導頁</h2>
+    </div>
+    <div class="right">
+        <div class="header">
+            <h2>歡迎來到我的抽象世界！</h2>
+            <p>本人專業發癲二十年，擅長寫bug、玩MC、搞抽象藝術。點擊下方按鈕和我一起發病，或者看看我搞的各種稀奇古怪的專案 (￣▽￣)*</p>
+        </div>
+        
+        <!-- 一堆抽象按鈕 -->
+        <div class="button-container">
+        <a href="/" class="button">
+                <p>中国简体字</p>
+                <small>哎呀！我老爸得了MVP！</small>
+            </a>
+            <a href="blog/index.html" class="button">
+                <p>我的精神病歷（部落格）</p>
+                <small>記錄我每天的發病情況和奇思妙想</small>
+            </a>
+            <a href="blog/index.html" class="button">
+                <p>抽象專案合集</p>
+                <small>一些正常人看不懂的程式碼和設計</small>
+            </a>
+            <a class="button">
+                <p>MC伺服器</p>
+                <small>敬請期待，反正我暑假也懶得弄 lol</small>
+            </a>
+            <a href="https://www.zuomeme.com/" class="button">
+                <p>梗圖生成器（外鏈）</p>
+                <small>專業生產各種抽象表情包</small>
+            </a>
+            <a href="mydc.html" class="button">
+                <p>聯繫病友</p>
+                <small>如果你也覺得自己不太正常，歡迎交流</small>
+            </a>
+            <a href="https://space.bilibili.com/1269986692" class="button">
+                <p>我的B站</p>
+                <small>一個經常被限流的帳號，求三連救救孩子</small>
+            </a>
+            <a class="button">
+                <p>病友交流群</p>
+                <small>點「聯繫病友」找我邀請（主要是懶得搞長期連結:P）</small>
+            </a>
+            <a href="friends.html" class="button">
+                <p>病友連結</p>
+                <small>其他同樣不太正常的朋友們</small>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>© 1145 沒有版權 | 本網站內容可能引起不適，正常人請謹慎訪問</p>
+            <!-- 
+                隱藏的抽象ASCII藝術
+                (´･ω･`)ﾉ 你知道嗎？
+                按下CTRL+U和CTRL+S和F12查看原始碼的人
+                今晚睡覺會被抽象怪獸抓走
+            -->
+        </div>
+    </div>
+</body>
+</html>
